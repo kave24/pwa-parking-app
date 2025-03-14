@@ -4,29 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#4285f4">
-  <title>Plate Checker</title>
+  <title>Parking Checker</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="images/icon-192x192.png">
   <link rel="icon" type="image/png" href="images/icon-192x192.png">
 </head>
 <body>
-  <header>
-    <h1>Plate Checker</h1>
-  </header>
-  
-  <main>
-    <div class="content">
-      <p>This is a basic Progressive Web App.</p>
-      <button id="install-button" class="hidden">Install App</button>
+  <div class="app-container">
+    <!-- Install prompt (shown only when not installed) -->
+    <div id="install-container" class="install-container">
+      <div class="install-content">
+        <h1>Parking Checker</h1>
+        <p>Capture and record videos to check wheter a car has parked</p>
+        <button id="install-button" class="button primary-button">Install App</button>
+      </div>
     </div>
-  </main>
 
-  <footer>
-    <p>Plate Checker</p>
-  </footer>
+    <!-- Main app (shown only when installed or in browser) -->
+    <div id="app-content" class="app-content hidden">
+      <!-- Camera viewfinder -->
+      <div class="camera-container">
+        <video id="camera-view" autoplay playsinline></video>
+        <canvas id="camera-canvas" class="hidden"></canvas>
+        
+        <!-- Recording indicator -->
+        <div id="recording-indicator" class="recording-indicator hidden">
+          <div class="recording-dot"></div>
+          <span id="recording-time">00:00</span>
+        </div>
+        
+        <!-- Camera controls -->
+        <div class="camera-controls">
+          <button id="capture-button" class="camera-button">
+            <div class="camera-button-inner"></div>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Bottom menu -->
+      <div class="bottom-menu">
+        <button class="menu-item active" data-action="camera">
+          <span class="icon">📷</span>
+          <span class="label">Camera</span>
+        </button>
+        <button class="menu-item" data-action="settings">
+          <span class="icon">⚙️</span>
+          <span class="label">Settings</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/app.js"></script>
-
 </body>
 </html>
