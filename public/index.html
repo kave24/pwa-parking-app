@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Install prompt (shown only when not installed) -->
+    <!-- Install screen -->
     <div id="install-container" class="install-container">
       <div class="install-content">
         <h1>Parking Checker</h1>
@@ -21,20 +21,18 @@
       </div>
     </div>
 
-    <!-- Main app (shown only when installed or in browser) -->
+    <!-- App screen -->
     <div id="app-content" class="app-content hidden">
-      <!-- Camera viewfinder -->
+      <!-- Camera -->
       <div class="camera-container">
         <video id="camera-view" autoplay playsinline></video>
         <canvas id="camera-canvas" class="hidden"></canvas>
         
-        <!-- Recording indicator -->
         <div id="recording-indicator" class="recording-indicator hidden">
           <div class="recording-dot"></div>
-          <span id="recording-time">00:00</span>
+          <span>Recording</span>
         </div>
         
-        <!-- Camera controls -->
         <div class="camera-controls">
           <button id="capture-button" class="camera-button">
             <div class="camera-button-inner"></div>
@@ -42,7 +40,7 @@
         </div>
       </div>
       
-      <!-- Bottom menu -->
+      <!-- Menu -->
       <div class="bottom-menu">
         <button class="menu-item active" data-action="camera">
           <span class="icon">📷</span>
